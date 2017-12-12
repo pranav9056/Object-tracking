@@ -522,3 +522,15 @@ def add_cdf_image_summary(values, name):
     return image
   cdf_plot = tf.py_func(cdf_plot, [values], tf.uint8)
   tf.summary.image(name, cdf_plot)
+
+def findBoxes(boxes,classes,scores,min_tresh):
+    #print (min_tresh)
+    ind = [ind for ind,v in enumerate(scores) if v > min_tresh]
+    #print(ind)
+    scores = scores[ind]
+    boxes = boxes[ind]
+    classes = classes[ind]
+    return (boxes,scores,classes,boxes.shape[0]!=0)
+
+
+  
