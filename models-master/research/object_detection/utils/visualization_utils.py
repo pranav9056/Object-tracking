@@ -115,10 +115,11 @@ def draw_bounding_box_on_image_array(image,
       coordinates as absolute.
   """
   image_pil = Image.fromarray(np.uint8(image)).convert('RGB')
-  draw_bounding_box_on_image(image_pil, ymin, xmin, ymax, xmax, color,
+  l,t,r,b = draw_bounding_box_on_image(image_pil, ymin, xmin, ymax, xmax, color,
                              thickness, display_str_list,
                              use_normalized_coordinates)
   np.copyto(image, np.array(image_pil))
+  return l,t,r,b
 
 
 def draw_bounding_box_on_image(image,
@@ -190,6 +191,8 @@ def draw_bounding_box_on_image(image,
         fill='black',
         font=font)
     text_bottom -= text_height - 2 * margin
+	#addition
+    return left,top,right,bottom
 
 
 def draw_bounding_boxes_on_image_array(image,
@@ -430,6 +433,7 @@ def visualize_boxes_and_labels_on_image_array(image,
   """
   # Create a display string (and color) for every box location, group any boxes
   # that correspond to the same location.
+  box_abs = []
   box_to_display_str_map = collections.defaultdict(list)
   box_to_color_map = collections.defaultdict(str)
   box_to_instance_masks_map = {}
@@ -472,7 +476,7 @@ def visualize_boxes_and_labels_on_image_array(image,
           box_to_instance_masks_map[box],
           color=color
       )
-    draw_bounding_box_on_image_array(
+    l,t,r,b = draw_bounding_box_on_image_array(
         image,
         ymin,
         xmin,
@@ -482,6 +486,7 @@ def visualize_boxes_and_labels_on_image_array(image,
         thickness=line_thickness,
         display_str_list=box_to_display_str_map[box],
         use_normalized_coordinates=use_normalized_coordinates)
+    box_abs.append([l,t,r,b])	
     if keypoints is not None:
       draw_keypoints_on_image_array(
           image,
@@ -490,7 +495,7 @@ def visualize_boxes_and_labels_on_image_array(image,
           radius=line_thickness / 2,
           use_normalized_coordinates=use_normalized_coordinates)
 
-  return image
+  return image,box_abs
 
 
 def add_cdf_image_summary(values, name):
