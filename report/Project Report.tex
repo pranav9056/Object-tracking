@@ -136,12 +136,18 @@ paper, approximately 1-5/8 inches (4.13 cm) from the bottom edge of the
 page.
 
 %-------------------------------------------------------------------------
+
 \section{Conclusion and Future Work}
+We will be resolving the shortcomings of our work in the future. To begin with, we will be reducing the dependency on Tensorflow for object detection by look at other alternatives. The primary reason for this is to have zero chance of error while detecting objects. Tensorflow though faster and effective most of the time, it fails to detect objects at certain frame which when coinciding with the object detection frame, can prove to be a failure in the tracking process.
+
+As mentioned earlier, hybrid approach, though proving to be better comparitvely, it does not meet the excpectation that we expected. This is because the sweet spot for reinitializing object detection varies for different videos and we will work on designing an algorithm to detected the ideal frame to initiate object detection in the hybrid approach
+
+Also, we would like to explore the possibility of running SIFT detector only inside the bounding box of the detected region of the object and see if it produces a postive impact on the speed on our model.
 
 
 
 %-------------------------------------------------------------------------
-\subsection{References}
+\section{References}
 
 List and number all bibliographical references in 9-point Times,
 single-spaced, at the end of your paper. When referenced in the text,
@@ -165,39 +171,11 @@ Ours & Makes one's heart Frob\\
 \end{table}
 
 %-------------------------------------------------------------------------
-\subsection{Illustrations, graphs, and photographs}
 
-All graphics should be centered.  Please ensure that any point you wish to
-make is resolvable in a printed copy of the paper.  Resize fonts in figures
-to match the font in the body text, and choose line widths which render
-effectively in print.  Many readers (and reviewers), even of an electronic
-copy, will choose to print your paper in order to read it.  You cannot
-insist that they do otherwise, and therefore must not assume that they can
-zoom in to see tiny details on a graphic.
-
-When placing figures in \LaTeX, it's almost always best to use
-\verb+\includegraphics+, and to specify the  figure width as a multiple of
-the line width as in the example below
-{\small\begin{verbatim}
-   \usepackage[dvips]{graphicx} ...
-   \includegraphics[width=0.8\linewidth]
-                   {myfile.eps}
-\end{verbatim}
-}
 
 
 %-------------------------------------------------------------------------
-\subsection{Color}
-
-Please refer to the author guidelines on the CVPR 2017 web page for a discussion
-of the use of color in your document.
-
-%------------------------------------------------------------------------
-\section{Final copy}
-
-You must include your signed IEEE copyright release form when you submit
-your finished paper. We MUST have this form before your paper can be
-published in the proceedings.
+\
 
 
 {\small
