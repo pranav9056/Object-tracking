@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.17)  16 DEC 2017 22:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.17)  16 DEC 2017 23:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -378,45 +378,53 @@ Underfull \hbox (badness 1648) in paragraph at lines 96--97
 []\OT1/ptm/m/n/10 We want to ex-per-i-ment three dif-fer-ent meth-ods in
  []
 
-[4322]
+Missing character: There is no â in font ptmr7t!
+Missing character: There is no € in font ptmr7t!
+Missing character: There is no ™ in font ptmr7t!
+<Picture1.png, id=20, 470.7186pt x 380.622pt>
+File: Picture1.png Graphic file (type png)
+ <use Picture1.png>
+Package pdftex.def Info: Picture1.png used on input line 131.
+(pdftex.def)             Requested size: 237.13594pt x 191.75085pt.
+ [4322]
+<./Picture2.png, id=32, 148.8762pt x 238.0092pt>
+File: ./Picture2.png Graphic file (type png)
+ <use ./Picture2.png>
+Package pdftex.def Info: ./Picture2.png used on input line 141.
+(pdftex.def)             Requested size: 237.13594pt x 379.11194pt.
 
-LaTeX Warning: Citation `Authors14' on page 4323 undefined on input line 155.
+
+LaTeX Warning: Citation `Authors14' on page 4323 undefined on input line 168.
 
 No file egpaper_final.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 186.
-[4323
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 186.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
+[4323 <./Picture1.png> <./Picture2.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
  (./egpaper_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 186.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 186.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 185.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 186.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
  ) 
 Here is how much of TeX's memory you used:
- 6264 strings out of 492995
- 90368 string characters out of 6132703
+ 6283 strings out of 492995
+ 90602 string characters out of 6132703
  183185 words of memory out of 5000000
- 9713 multiletter control sequences out of 15000+600000
- 24113 words of font info for 58 fonts, out of 8000000 for 9000
+ 9723 multiletter control sequences out of 15000+600000
+ 26189 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  34i,8n,26p,1042b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
-ive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive
-/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/
-2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2017/texmf
--dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-dist/font
-s/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (3 pages, 91964 bytes).
+exlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
+7/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on egpaper_final.pdf (3 pages, 465330 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
- 58 compressed objects within 1 object stream
- 21 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
+ 22 named destinations out of 1000 (max. 500000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -124,16 +124,29 @@ So, instead of just using the object detection technique only for initializing, 
 %------------------------------------------------------------------------
 \section{Experimental Analysis and Result}
 
-All text must be in a two-column format. The total allowable width of the
-text area is $6\frac78$ inches (17.5 cm) wide by $8\frac78$ inches (22.54
-cm) high. Columns are to be $3\frac14$ inches (8.25 cm) wide, with a
-$\frac{5}{16}$ inch (0.8 cm) space between them. The main title (on the
-first page) should begin 1.0 inch (2.54 cm) from the top edge of the
-page. The second and following pages should begin 1.0 inch (2.54 cm) from
-the top edge. On all pages, the bottom margin should be 1-1/8 inches (2.86
-cm) from the bottom edge of the page for $8.5 \times 11$-inch paper; for A4
-paper, approximately 1-5/8 inches (4.13 cm) from the bottom edge of the
-page.
+  We compared the time taken to track an object in a video using the two different approaches discussed in the previous sections of this report. Our first approach is, keep detecting the object throughout the video using Tensorflow and the other way we have chosen to track the object is to detect it in the beginning using Tensorflow and then track it through the video using Open C’s tracker.
+  
+    %% Inluding the images
+\begin{figure}
+\includegraphics[width=\linewidth]{Picture1.png}
+\caption{Comparison}
+\end{figure}
+  
+  The graph here represents the data we gathered after implementing these two algorithms on 3 different videos of same length, i.e. 3 seconds each.  
+X-axis: Name of the video.
+Y- axis: Time in seconds.
+
+  %% Inluding the images
+\begin{figure}
+\includegraphics[width=\linewidth]{./Picture2.png}
+\caption{This is the Share\LaTeX{} logo}
+\end{figure}
+
+As you can see clearly for every video, regardless of it resolution, first approach (detection algorithm) has taken longer to track the object and evidently more than twice the time taken by the tracking algorithm
+
+
+
+Although the Open CV tracker seems like a better option in terms of speed, it has a couple of limitations as well. First limitation being tracker algorithm depending on Tensorflow to detect the object and only then tracking it throughout the video. Second limitation being the decrease in size of the box enclosing the feature points of the detected object as the time passes.
 
 %-------------------------------------------------------------------------
 
@@ -155,20 +168,6 @@ enclose the citation number in square brackets, for
 example~\cite{Authors14}.  Where appropriate, include the name(s) of
 editors of referenced books.
 
-\begin{table}
-\begin{center}
-\begin{tabular}{|l|c|}
-\hline
-Method & Frobnability \\
-\hline\hline
-Theirs & Frumpy \\
-Yours & Frobbly \\
-Ours & Makes one's heart Frob\\
-\hline
-\end{tabular}
-\end{center}
-\caption{Results.   Ours is better.}
-\end{table}
 
 %-------------------------------------------------------------------------
 
