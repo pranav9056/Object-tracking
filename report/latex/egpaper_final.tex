@@ -50,82 +50,79 @@ UBIT: manvijay\\
 
 %%%%%%%%% ABSTRACT
 \begin{abstract}
-   Object detection and tracking has become an integral part of Computer Vision. Efficient realization of these techniques in images and videos helped create various application in the field of automation, face detection, motion capture etc. This paper proposes an Lucas-Kanade object tracking technique initiated by Tensorflow's Object detection API and compares how this technique differs from the native tracking method employed in Tensorflow object detection.
+   Object detection and tracking have become an integral part of Computer Vision. Efficient realization of these techniques in images and videos have helped create various applications in the field of automation, face detection, motion capture etc. This paper implements\footnote{Code can be found at \url{https://github.com/pranav9056/Object-tracking}} an object tracking pipeline using Lucas-Kanade tracker after being initialized by tensorflow's object detection API and compares this technique to tracking using just the object detection API at each frame. We also look at a hybrid approach where object detection is used multiple times. 
    \end{abstract} 
 %%%%%%%%% BODY TEXT
 \section{Literature Review}
 
-An optimal approach to any tracking algorithm is based on two key areas in computer vision; object detection and object tracking. While a variety of methods are available for accomplishing these techniques, not all of them prove to be effective in achieving a significant efficiency. Conventional method for accomplishing this uses techniques such as Frame Differencing, Optical flow, and Background subtraction for object detection and Point-tracking techniques, SVM and Kernel bases tracking for object tracking . A brief introduction to a some of these techniques is given below
+An optimal approach to any tracking algorithm is based on two key areas in computer vision; object detection and object tracking. While a variety of methods are available for accomplishing these techniques, not all of them prove to be effective in achieving a significant efficiency. Conventional method for object detection and tracking makes use of techniques such as Frame Differencing, Optical flow, Background subtraction, Point-tracking techniques, SVM and Kernel based tracking. A brief introduction to a some of these techniques is given below
 
 %-------------------------------------------------------------------------
-\subsection{Some Object Detection Methods}
 
-\subsubsection{Frame Differencing}
+\subsection{Frame Differencing}
 Frame differencing suggests calculating the difference between two successive frame in an image to find the moving objects. While the idea is simple and east to implement, it is generally considered ineffective in dynamic environments where the changes in the frame of an image are not just isolated to the objects that needs to be tracked.
 
-\subsubsection{Background Subtraction}
+\subsection{Background Subtraction}
 This techniques involves modelling the background and use that for background subtraction. We must choose a background model sensitive enough to uncover the objects in an image/frame and use that as a reference in tracking. This can be done by find the variation between frames and the reference models. Common filters like mean and median filters can be used to calculate the difference in pixel intensities. This is mainly achieved using recursive and non-recursive algorithms. A background subtraction algorithm based on frame differencing is explored in ~\cite{literaturereview}.  Similar to the previous approach, this method becomes in effective in the variation in the background becomes high. A more sophisticated method which can ignore highly changing  background will be needed for detecting objects will be required for advanced models.
 
-\subsection{Some Object Tracking Methods}
-
-\subsubsection{Support Vector Machine (SVM)}
+\subsection{Support Vector Machine (SVM)}
 SVMs apply machine learning algorithms for learning, analyzing and storing the the output as positive and negative values that represent the tracked objects in an image and objects not tracked in an image. SVMs have a wider range of application in real world, that includes but not isolated to face detection, bioinformatics, handwriting or pattern recognitions etc.
 
-\subsubsection{Silhouette Bases Tracking approach}
+\subsection{Silhouette Based Tracking approach}
 This approach is helpful in tracking complex geometric shapes present in images such as hands, fingers etc. It can be done by employed by track either the boundary(Contour) of objects in an image or the shape corresponding to those objects. Contour based tracking can be achieved using gradient descent minimization technique and using state space models to trace boundaries. Shape Matching is a kind of brute force approach applied on a region of interest in a frame to identify objects that can be matched with a reference object
 
 
 \subsection{Tensorflow API}
 
-Tensorflow was originally developed by Google Brain Team to help facilitate machine learning and deep learning researches. Tensorflow's object detection model consists of a neural network trained from COCO(Common Objects in Context) dataset. It contains around 300k images of 90 commonly used objects. The library consists of 5 different models to use; classified based on their speed and accuracy of placing the bounding box (a box that encloses a detected object). We plan to use all the 5 different models and compare the results of one with the another to find the most optimal one.
+Tensorflow was originally developed by Google Brain Team to help facilitate machine learning and deep learning researches. Tensorflow's object detection model consists of a neural network trained from COCO(Common Objects in Context) dataset. It contains around 300k images of 90 commonly used objects. The library consists of 5 different models that can be used; classified based on their speed and accuracy of placing the bounding box (a box that encloses a detected object). We plan to use the latest version of one of the models - \textit{ssd\textunderscore mobilenet\textunderscore v1\textunderscore coco}, which has the highest speed while sacrificing a little efficiency in placing the bounding box on the object.
 
 \subsection{Lucas-Kanade Tracker in OpenCV}
 
-Devoped by Bruce D. Lucas and Takeo Kanade, Lucas-Kanade Tracker uses an optical flow algorithm to track an object in subsequent frames. OpenCV incorporates a predefined function - \textit{calcOpticalFlowPyrLK()} , for implementing this algorithm, which we are planning to append to the tensorflow's object detection technique
+Developed by Bruce D. Lucas and Takeo Kanade, Lucas-Kanade Tracker uses an optical flow algorithm to track an object in subsequent frames. OpenCV incorporates a predefined function - \textit{calcOpticalFlowPyrLK()} , that implements this algorithm. We will use this function in our object tracking pipeline.
+
+
+
 
 
 %-------------------------------------------------------------------------
 \section{Method Proposed}
-Trained Neural Networks has been proven to produce better efficiency and detection models. 
+Neural Networks have been proven to produce better and efficient detection models. 
 
-Our idea is to come up with an ideal tracking method that is able to self detect object and track them. We aim to make use of tensorflow's object detection technique and the Lucas-Kanade tracker implemented using opencv library. The desire pre-trained model used to detect an object is downloaded from the Tensorflow library.
+Our idea was to come up with an ideal tracking pipeline that is able to self detect objects and track them. Given the scope of the problem we decided to make use of TensorFlow's object detection library which provided us with a desired pre-trained model and OpenCV's implementation of Lucas Kanade Tracker.  
 
-We want to experiment three different methods in achieving a tracking algorithm which are as follows
+We experiment with three different techniques for achieving a tracking algorithm which are described in this section.
 
 \subsection{Objection detection using Tensorflow}
-In this method, we employ a detection technique using object detection function from Tensorflow. The process initiates by starting with the first frame in a video or image. The object detected is visualized using a bounding box enclosing the object. This is done by the function\textit{visualize\textunderscore boxes\textunderscore and\textunderscore labels\textunderscore on\textunderscore image\textunderscore array()}  In every successive frame, the same object detection algorithm is employed to detect the new interesting objects in the frame. In the end, detecting  objects in all the frame individually translates to an indirect object tracking method.
+In this method, we use TensorFlow's object detection model to perform tracking completely. The method starts by detecting objects present in the first frame of a video or image by using a model pre-trained on the COCO Dataset. The object detected is visualized using a bounding box enclosing the object. This is done by the function  \textit{visualize\textunderscore boxes\textunderscore and\textunderscore labels\textunderscore on\textunderscore image\textunderscore array()}  In every successive frame, the same object detection algorithm is employed to detect the interesting objects in the frame. To summarize, detecting  objects in all the frames individually translates to an indirect object tracking method.
 
 \subsection{Object tracking initialized by Tensorflow}
 
-In this method, we initialize the process by starting with Tensorflow's object detection. The first part of the detects the objects of interest in the image using the pre-trained model The objects detected in the first frame is used as input for tracking in the second part.
+In this method, we initialize the process by starting with Tensorflow's object detection. This part of the algorithm detects the objects of interest in the image using a pre-trained model same as the one in the previous method. This is done till the objects detected in the frames are above a certain confidence level. The objects are later used as input for tracking in the second part.
 
-The object detection technique employed here returns an array of bounding boxes which consists of a array of co-ordinates for boxes enclosing an object for all interesting objects and their corresponding scores. Since, all the boxes detected may not used ideal, we set a threshold to the scores to limit the number boxes.
+The object detection technique employed here returns an array of bounding boxes which consists of an array of co-ordinates for boxes enclosing the objects and their corresponding scores. Since, all the boxes detected may not be ideal, we set a threshold to the scores to limit the number of objects. This is done by calling \textit{findBoxes()} which was added by us and returns a boolean variable that marks object detection. 
 
-In the next part, we use SIFT detector on the first frame of the video/ image to detect the feature points in the image. Not all points here are required for tracking. Hence, we limit them by choosing only the feature point present inside the bounding box detected from the object detection. This will give us the keypoints that can be used to track the object.
+In the next part, we use SIFT detectors on the first frame of the video/ image where an object was detected to find the feature points in that image. Not all points here are required for tracking. Hence, we limit them by choosing only the feature points present inside the bounding box detected from the object detection. This gives us the keypoints that can be used to track the object in subsequent frames.
 
-Using the feature points extracted above, we initiate the Lucas-Kanade tracking function- \textit{calcOpticalFlowPyrLK()} from openCV. The difference in the location of the object in the current frame to that in the previous frame in calculated. This is used to eliminate static objects from background by setting a threshold on the difference. 
+Using the feature points extracted above, we track these points by using - \textit{calcOpticalFlowPyrLK()} from openCV, which provides an implementation of Lucas-Kanade Tracker. The difference in the location of the object in the current frame to that in the previous frame in calculated. This is used to eliminate static objects from background by discarding all points that are below a threshold. 
 
 Finally, a bounding box is drawn over the object using the \textit{visualize\textunderscore boxes\textunderscore and\textunderscore labels\textunderscore on\textunderscore image\textunderscore array()}  function from tensorflow library.
 
-Many authors misunderstand the concept of anonymizing fosr blind
-review.  Blind review does not mean that one must remove
-citations to one's own work---in fact it is often impossible to
-review a paper unless the previous citations are known and
-available.
+
 
 \subsection{Hybrid Approach}
-As the name suggests, this method employs the correlation between both object detection from Tensorflow and Lucas-Kanade Tracker. The outcome visualized is to combine Tensorflow's efficiency in detection and the speed of tracking achieve by KLT algorithm. This idea is to create a fail proof technique in which the shortcomings in the KLT algorithm is balance by usage Tensorflow to detect objects periodically.
+As the name suggests, this method is a mixture of both the methods mentioned above. The idea is to combine Tensorflow's efficiency in detection and the speed of tracking achieved by KLT algorithm. Using this approach we can strengthen the current belief of the objects. 
 
-So, instead of just using the object detection technique only for initializing, we use Tensorflow to detect object for every \textbf{n} frames and pass the detected objects as input to tracker everytime. So, in short once the object detection passes the input to tracker, it waits for \textit{n} frames to detects objects again and pass the same to the tracker. This approach has a potential benefit of detecting objects that are not present in the beginning of the video. Also, it could help rectify any pitfalls in the Tracking algorithm but constantly running object detection again while maintaining speed.
+Instead of just using the object detection technique only for initialization, we use Tensorflow to detect object after every \textbf{N} frames and pass the detected objects as input to tracker as in the second approach.  To summarize once the object detection passes the input to tracker, it tracks the objects for the next \textit{N} frames after which it detects objects again and passes them to the tracker. This approach has a potential benefit of detecting objects that are not present in the beginning of the video. Also, it could help rectify any pitfalls in the Tracking algorithm by periodically running object detection again while still maintaining the speed.
 
 %------------------------------------------------------------------------
 \section{Experimental Analysis and Result}
 
-We have tested all the three approaches discusses earlier with a few hand-picked videos and image sets. A link to the the original output files are in ~\cite{Videolink}. Also, we have compared the time taken to track an object in a video using three different approaches discussed in the previous sections of this report. Please find below the detailed analysis
+We have tested all the three approaches discussed earlier with a few  videos and image sets from real datsets. A link to the the original output files are in ~\cite{Videolink}. Also, we have compared the time taken to track an object in a video using three different approaches discussed in the previous sections of this report. This section gives a detailed analysis of the three methods and mentions their advantages and pitfalls.
 
 \subsection{Object detection using tensorflow}  
 
-When we implemented the first algorithm (Object Detection using Tensorflow) on the videos, we found out that it misses on detecting objects later in the video which were detected in the initial frames of the video. We tried it on a set of test images taken by a CCTV camera and it gave us the same result. As far as the running time is concerned this approach almost took twice as long as the other two algorithms. \textit{See Figure 1}.
+When we implemented the first algorithm (Object Detection using Tensorflow) on the videos, we found out that it misses on detecting objects later in the video which were detected in the initial frames of the video  (\textit{See Figure 1}). We tried it on a set of test images of a traffic signal and observed something similar with the car 
+ (\textit{Figure 2}). This loss of detection can perhaps be due to occlusion/loss in some features. As far as the running time is concerned this approach almost took twice as long as the other two algorithms since objects were being detected at each frame.
 
     %% Inluding the images
 \begin{figure}
@@ -133,7 +130,6 @@ When we implemented the first algorithm (Object Detection using Tensorflow) on t
 \caption{Detection using Tensorflow for a video }
 \end{figure}
 
-This algorithm was run on a series of test images as well, screenshots of which are shown in \textit{Figure 2}
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Detection_images.jpg}
@@ -142,17 +138,18 @@ This algorithm was run on a series of test images as well, screenshots of which 
 
 \textbf{Advantages:}
 
-•	This is the backbone of the other two approaches.
-•	People in the machine learning community is aware of Tensorflow which means More minds solving problems hence more shoulders to stand upon!
+This is the backbone of the other two approaches.
+Tensorflow provides an easy to use object detector which can be used right off the shelf without having to train the models. This will also detect the most number of objects even if it can't always keep track of them.
 
 \textbf{Disadvantages:}
 
-•	When implemented on videos, doesn’t always detect the object which was detected in one of the previous frames of the same video. 
-•	Takes more time.
+When run on videos, doesn’t always detect the object which was detected in one of the previous frames of the same video. 
+It takes more time.
 
 \subsection{Object tracking initiated by Tensorflow}  
 
 On implementing this algorithm, we got quicker results than the first approach, almost half the time. The other positive point of this algorithm we observed was that it never lost track of the object which was tracked in the initial frames of the video. However, there is a limitation in this algorithm. The box enclosing the feature points of the detected objects keep reducing in the size as the video progresses. The reason for that diminishing box is the lesser number of feature points left inside the box after comparing two consecutive frames.\textit{ See Figure 3}.
+Also the objects that are tracked depend completely on the frame in which they were detected, that is it misses out on the objects that could have been later detected by the object detector.
 
 \begin{figure}
 \includegraphics[width=\linewidth]{Tracking.jpg}
@@ -168,17 +165,17 @@ This algorithm was run on a series of test images as well, screenshots of which 
 
 \textbf{Advantages:}
 
-•	It’s substantially faster than TensorFlow approach and marginally faster than Hybrid approach.
+•	It is substantially faster than TensorFlow approach and marginally faster than Hybrid approach.
 •	It keeps track of the object detected in one frame till the end of the video.
 
 \textbf{Disadvantages}
 
-•	Rely on TensorFlow to detect an object before it can track that object throughout the video.
+•	Tracks only the objects detected in one frame throughout the video.
 •	Decrease in size of the box enclosing the feature points of the detected object as the time passes or in other not enclosing all the feature points of the detected object after a few frames.
  
 \subsection{Hybrid Approach}  
 
-This approach keeps the best elements from the previous algorithms. It’s almost as fast as second approach and can be trusted with detecting new objects in the middle of the video (a trait shown by first algorithm). However, the only limitation it has is its over reliance on Tensorflow which leads to not detecting objects once Tensorflow is unable to detect the object. It’s an upgrade on tracking algorithm as it detects algorithm even in the intermediate frames of the video but loses its edge if TensorFlow fails to detect it in the frame where this algorithm uses TensorFlow for detection. \textit{See Figure 5}.
+This approach keeps the best elements from the previous algorithms. It is almost as fast as second approach and can be trusted with detecting new objects in the middle of the video (a trait shown by first algorithm). However, the only limitation it has is its over reliance on Tensorflow which leads to not being able to track objects once Tensorflow is unable to detect the object. It’s an upgrade on tracking algorithm as it detects new objects even in the intermediate frames of the video but loses its edge if TensorFlow fails to detect objects in the frame where this algorithm uses TensorFlow for detection. \textit{See Figure 5}.
 
     %% Inluding the images
 \begin{figure}
@@ -197,19 +194,16 @@ This algorithm was run on a series of test images as well, screenshots of which 
 \textbf{Advantages:}
 
 •	Faster than TensorFlow/Object Detection approach.
-•	More efficient than Tracking and Detection approach.
+•	Has more chance of tracking new objects.
 
 \textbf{Disadvantages:}
 
-•	Rely on TensorFlow to detect an object before it can track that object for next n frames.
+•	May loose track of objects that it was tracking due to re initialization of object detection. The frame at which it is reinitialized plays an important factor and can be different for different videos.
 
 \subsection{Comparison of different methods}
 
-\textbf{What does this Graph in Figure 7 represent?}
 
-The graph shown in \textit{Figure 7} represents the data we gathered after implementing these three algorithms on 3 different videos of same length, i.e. 3 seconds each.  
-X-axis: Name of the video.
-Y- axis: Time in seconds.
+The graph shown in \textit{Figure 7} represents the data we gathered after running these three algorithms on 3 different videos of same length, i.e. 3 seconds each. It can be clearly seen that the the first approach is time consuming and the other two have comparable running times.  
 
 
     %% Inluding the images
@@ -222,26 +216,34 @@ Y- axis: Time in seconds.
 %-------------------------------------------------------------------------
 
 \section{Conclusion and Future Work}
-We will be resolving the shortcomings of our work in the future. To begin with, we will be reducing the dependency on Tensorflow for object detection by look at other alternatives. The primary reason for this is to have zero chance of error while detecting objects. Tensorflow though faster and effective most of the time, it fails to detect objects at certain frame which when coinciding with the object detection frame, can prove to be a failure in the tracking process.
 
-As mentioned earlier, hybrid approach, though proving to be better comparitvely, it does not meet the excpectation that we expected. This is because the sweet spot for reinitializing object detection varies for different videos. Thus, this approach has too much dependency on Tensorflow. We will work on designing an algorithm to detected the ideal frame to initiate object detection in the hybrid approach. Also, a different objection detection technique as suggested above might make the hybrid approach robust.
+In Conclusion, We feel that this was really good starting point
+to acquaint ourselves to the existing tracking algorithms. This project was feasible as it relied on open source code while at the same time exposed us to new API's
 
-Also, we would like to explore the possibility of running SIFT detector only inside the bounding box of the detected region of the object and see if it produces a postive impact on the speed on our model.
+As mentioned earlier, Tensorflow has 5 pre-trained models for object detection of which we had used only the one. We wish to experiment with the remaining four models and see how these models fare with respect to the existing design. 
+
+To overcome the shortcomings of the pipeline, we will be looking at other alternatives for object detection. The primary reason for this is to reduce the chance of error and increase accuracy while detecting objects. Tensorflow though faster and effective most of the time, fails to detect objects at certain frames which when coinciding with the object detection frame, can prove to hamper the tracking process.
+
+As mentioned before, hybrid approach, did not meet our expectations fully. This is because the sweet spot for re-initializing object detection varies for different videos. Perhaps we can use a couple of consecutive frames to detect objects instead of going with the first frame where objects are detected, this or a different objection detection technique as suggested above might make the hybrid approach more robust and is left for future work.
+
+Also, we plan on running SIFT detector only inside the bounding box of the detected region of the object and hope that it produces a positive impact on the speed on our implementation.
+
+
 
 
 
 %-------------------------------------------------------------------------
 \begin{thebibliography}{9}
 \bibitem{research1} 
-https://research.googleblog.com/2017/06/
-supercharge-your-computer-vision-models.html
+\url{https://research.googleblog.com/2017/06/
+supercharge-your-computer-vision-models.html}
  
 \bibitem{HW} 
-http://16720.courses.cs.cmu.edu/hw/hw3.pdf
+\url{http://16720.courses.cs.cmu.edu/hw/hw3.pdf}
  
 \bibitem{research} 
-https://towardsdatascience.com/building-a-real-time-object
--recognition-app-with-tensorflow-and-opencv-b7a2b4ebdc32
+\url{https://towardsdatascience.com/building-a-real-time-object
+-recognition-app-with-tensorflow-and-opencv-b7a2b4ebdc32}
 
 \bibitem{literaturereview}
 Rupali S.Rakibe, Bharati D.Patil.
@@ -249,7 +251,7 @@ Rupali S.Rakibe, Bharati D.Patil.
 International Journal of Scientific and Research Publications, May 2013
 
 \bibitem{Videolink} 
-https://drive.google.com/drive/folders/1DNHOEnZ2hg9FvYhQ7i9tk-PC6b3fAjAF
+\url{https://goo.gl/F5MFyF}
 
 \end{thebibliography}
 
