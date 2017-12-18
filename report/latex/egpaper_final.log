@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.17)  16 DEC 2017 23:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.11.17)  18 DEC 2017 00:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -275,21 +275,21 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (./egpaper_final.aux)
 \openout1 = `egpaper_final.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 22.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
@@ -335,7 +335,7 @@ e
 ))
 \AtBeginShipoutBox=\box31
 Package atbegshi Info: Package `everyshi' patched.
-Package hyperref Info: Link coloring OFF on input line 25.
+Package hyperref Info: Link coloring OFF on input line 22.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -345,86 +345,167 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count121
 )
-LaTeX Info: Redefining \ref on input line 25.
-LaTeX Info: Redefining \pageref on input line 25.
-LaTeX Info: Redefining \nameref on input line 25.
+LaTeX Info: Redefining \ref on input line 22.
+LaTeX Info: Redefining \pageref on input line 22.
+LaTeX Info: Redefining \nameref on input line 22.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 53.
-LaTeX Font Info:    Try loading font information for U+msa on input line 53.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
+LaTeX Font Info:    Try loading font information for U+msa on input line 50.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 53.
+LaTeX Font Info:    Try loading font information for U+msb on input line 50.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 52.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 66.
-Missing character: There is no ‚ in font ptmri7t!
-Missing character: There is no Ä in font ptmri7t!
-Missing character: There is no ú in font ptmri7t!
-Missing character: There is no ‚ in font ptmri7t!
-Missing character: There is no Ä in font ptmri7t!
-Missing character: There is no ù in font ptmri7t!
- [4321{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+ [1{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Underfull \hbox (badness 1648) in paragraph at lines 96--97
+Underfull \hbox (badness 1648) in paragraph at lines 93--94
 []\OT1/ptm/m/n/10 We want to ex-per-i-ment three dif-fer-ent meth-ods in
+ []
+
+[2] <Detection.jpg, id=35, 4010.985pt x 1237.62375pt>
+File: Detection.jpg Graphic file (type jpg)
+ <use Detection.jpg>
+Package pdftex.def Info: Detection.jpg used on input line 132.
+(pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
+
+<Detection_images.jpg, id=36, 4010.985pt x 1237.62375pt>
+File: Detection_images.jpg Graphic file (type jpg)
+
+<use Detection_images.jpg>
+Package pdftex.def Info: Detection_images.jpg used on input line 139.
+(pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+ <Tracking.jpg, id=37, 4010.985pt x 1237.62375pt>
+File: Tracking.jpg Graphic file (type jpg)
+
+<use Tracking.jpg>
+Package pdftex.def Info: Tracking.jpg used on input line 158.
+(pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
+ <Tracking_images.jpg, id=38, 4010.985pt x 1237.62375pt>
+File: Tracking_images.jpg Graphic file (type jpg)
+
+<use Tracking_images.jpg>
+Package pdftex.def Info: Tracking_images.jpg used on input line 165.
+(pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ô in font ptmr7t!
+ <Hybrid.jpg, id=39, 4010.985pt x 1237.62375pt>
+File: Hybrid.jpg Graphic file (type jpg)
+
+<use Hybrid.jpg>
+Package pdftex.def Info: Hybrid.jpg used on input line 185.
+(pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
+ <Hybrid_images.jpg, id=40, 4010.985pt x 1237.62375pt>
+File: Hybrid_images.jpg Graphic file (type jpg)
+
+<use Hybrid_images.jpg>
+Package pdftex.def Info: Hybrid_images.jpg used on input line 193.
+(pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ¢ in font ptmr7t!
+
+Underfull \hbox (badness 1019) in paragraph at lines 199--201
+[] \OT1/ptm/m/n/10 Faster than Ten-sor-Flow/Object De-tec-tion ap-proach.
  []
 
 Missing character: There is no ‚ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-<Picture1.png, id=20, 470.7186pt x 380.622pt>
-File: Picture1.png Graphic file (type png)
- <use Picture1.png>
-Package pdftex.def Info: Picture1.png used on input line 131.
+Missing character: There is no ¢ in font ptmr7t!
+[3 <./Detection.jpg> <./Detection_images.jpg> <./Tracking.jpg> <./Tracking_imag
+es.jpg> <./Hybrid.jpg>] <Graph.png, id=52, 470.7186pt x 380.622pt>
+File: Graph.png Graphic file (type png)
+
+<use Graph.png>
+Package pdftex.def Info: Graph.png used on input line 217.
 (pdftex.def)             Requested size: 237.13594pt x 191.75085pt.
- [4322]
-<./Picture2.png, id=32, 148.8762pt x 238.0092pt>
-File: ./Picture2.png Graphic file (type png)
- <use ./Picture2.png>
-Package pdftex.def Info: ./Picture2.png used on input line 141.
-(pdftex.def)             Requested size: 237.13594pt x 379.11194pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
+[]\OT1/ptm/m/n/10 https://towardsdatascience.com/building-a-real-time-
+ []
 
 
-LaTeX Warning: Citation `Authors14' on page 4323 undefined on input line 168.
+Underfull \hbox (badness 10000) in paragraph at lines 243--245
+\OT1/ptm/m/n/10 object -recognition-app-with-tensorflow-and-opencv-
+ []
+
+
+Overfull \hbox (58.15155pt too wide) in paragraph at lines 252--253
+[]\OT1/ptm/m/n/10 https://drive.google.com/drive/folders/1DNHOEnZ2hg9FvYhQ7i9tk
+-
+ []
 
 No file egpaper_final.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 185.
-[4323 <./Picture1.png> <./Picture2.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 185.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
+[4 <./Hybrid_images.jpg> <./Graph.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
  (./egpaper_final.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 185.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 185.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 185.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 270.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 270.
  ) 
 Here is how much of TeX's memory you used:
- 6266 strings out of 492995
- 90441 string characters out of 6132703
- 183185 words of memory out of 5000000
- 9713 multiletter control sequences out of 15000+600000
+ 6310 strings out of 492995
+ 91111 string characters out of 6132703
+ 183311 words of memory out of 5000000
+ 9736 multiletter control sequences out of 15000+600000
  22414 words of font info for 50 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,26p,1042b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,8n,26p,887b,324s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2017/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/201
 7/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2017/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (3 pages, 465067 bytes).
+Output written on egpaper_final.pdf (4 pages, 17503350 bytes).
 PDF statistics:
- 61 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
- 22 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 90 PDF objects out of 1000 (max. 8388607)
+ 72 compressed objects within 1 object stream
+ 37 named destinations out of 1000 (max. 500000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

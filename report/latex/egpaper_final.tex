@@ -16,12 +16,9 @@
 
 \cvprfinalcopy % *** Uncomment this line for the final submission
 
-\def\cvprPaperID{****} % *** Enter the CVPR Paper ID here
-\def\httilde{\mbox{\tt\raisebox{-.5ex}{\symbol{126}}}}
-
 % Pages are numbered in submission mode, and unnumbered in camera-ready
 %\ifcvprfinal\pagestyle{empty}\fi
-\setcounter{page}{4321}
+\setcounter{page}{1}
 \begin{document}
 
 %%%%%%%%% TITLE
@@ -67,7 +64,7 @@ An optimal approach to any tracking algorithm is based on two key areas in compu
 Frame differencing suggests calculating the difference between two successive frame in an image to find the moving objects. While the idea is simple and east to implement, it is generally considered ineffective in dynamic environments where the changes in the frame of an image are not just isolated to the objects that needs to be tracked.
 
 \subsubsection{Background Subtraction}
-This techniques involves modelling the background and use that for background subtraction. We must choose a background model sensitive enough to uncover the objects in an image/frame and use that as a reference in tracking. This can be done by find the variation between frames and the reference models. Common filters like mean and median filters can be used to calculate the difference in pixel intensities. This is mainly achieved using recursive and non-recursive algorithms. A background subtraction algorithm based on frame differencing is explored in \textit{Rupali S.Rakibe, Bharati D.Patil, “Background Subtraction Algorithm Based Human Motion Detection”,International Journal of Scientific and Research Publications, May 2013}.  Similar to the previous approach, this method becomes in effective in the variation in the background becomes high. A more sophisticated method which can ignore highly changing  background will be needed for detecting objects will be required for advanced models.
+This techniques involves modelling the background and use that for background subtraction. We must choose a background model sensitive enough to uncover the objects in an image/frame and use that as a reference in tracking. This can be done by find the variation between frames and the reference models. Common filters like mean and median filters can be used to calculate the difference in pixel intensities. This is mainly achieved using recursive and non-recursive algorithms. A background subtraction algorithm based on frame differencing is explored in ~\cite{literaturereview}.  Similar to the previous approach, this method becomes in effective in the variation in the background becomes high. A more sophisticated method which can ignore highly changing  background will be needed for detecting objects will be required for advanced models.
 
 \subsection{Some Object Tracking Methods}
 
@@ -84,7 +81,7 @@ Tensorflow was originally developed by Google Brain Team to help facilitate mach
 
 \subsection{Lucas-Kanade Tracker in OpenCV}
 
-Devoped by Bruce D. Lucas and Takeo Kanade, Lucas-Kanade Tracker uses an optical flow algorithm to track an object in subsequent frames. OpenCV incorporates a predefined function for implementing this algorithm namely -\textit{visualize\textunderscore boxes\textunderscore and\textunderscore labels\textunderscore on\textunderscore image\textunderscore array()} which we are planning to append to the tensorflow's object detection technique
+Devoped by Bruce D. Lucas and Takeo Kanade, Lucas-Kanade Tracker uses an optical flow algorithm to track an object in subsequent frames. OpenCV incorporates a predefined function - \textit{calcOpticalFlowPyrLK()} , for implementing this algorithm, which we are planning to append to the tensorflow's object detection technique
 
 
 %-------------------------------------------------------------------------
@@ -124,49 +121,137 @@ So, instead of just using the object detection technique only for initializing, 
 %------------------------------------------------------------------------
 \section{Experimental Analysis and Result}
 
-  We compared the time taken to track an object in a video using the two different approaches discussed in the previous sections of this report. Our first approach is, keep detecting the object throughout the video using Tensorflow and the other way we have chosen to track the object is to detect it in the beginning using Tensorflow and then track it through the video using Open C’s tracker.
-  
+We have tested all the three approaches discusses earlier with a few hand-picked videos and image sets. A link to the the original output files are in ~\cite{Videolink}. Also, we have compared the time taken to track an object in a video using three different approaches discussed in the previous sections of this report. Please find below the detailed analysis
+
+\subsection{Object detection using tensorflow}  
+
+When we implemented the first algorithm (Object Detection using Tensorflow) on the videos, we found out that it misses on detecting objects later in the video which were detected in the initial frames of the video. We tried it on a set of test images taken by a CCTV camera and it gave us the same result. As far as the running time is concerned this approach almost took twice as long as the other two algorithms. \textit{See Figure 1}.
+
     %% Inluding the images
 \begin{figure}
-\includegraphics[width=\linewidth]{Picture1.png}
-\caption{Comparison}
+\includegraphics[width=\linewidth]{Detection.jpg}
+\caption{Detection using Tensorflow for a video }
 \end{figure}
-  
-  The graph here represents the data we gathered after implementing these two algorithms on 3 different videos of same length, i.e. 3 seconds each.  
+
+This algorithm was run on a series of test images as well, screenshots of which are shown in \textit{Figure 2}
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Detection_images.jpg}
+\caption{Detection using Tensorflow for a sequence of images}
+\end{figure}
+
+\textbf{Advantages:}
+
+•	This is the backbone of the other two approaches.
+•	People in the machine learning community is aware of Tensorflow which means More minds solving problems hence more shoulders to stand upon!
+
+\textbf{Disadvantages:}
+
+•	When implemented on videos, doesn’t always detect the object which was detected in one of the previous frames of the same video. 
+•	Takes more time.
+
+\subsection{Object tracking initiated by Tensorflow}  
+
+On implementing this algorithm, we got quicker results than the first approach, almost half the time. The other positive point of this algorithm we observed was that it never lost track of the object which was tracked in the initial frames of the video. However, there is a limitation in this algorithm. The box enclosing the feature points of the detected objects keep reducing in the size as the video progresses. The reason for that diminishing box is the lesser number of feature points left inside the box after comparing two consecutive frames.\textit{ See Figure 3}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Tracking.jpg}
+\caption{Object Tracking in a video initiated by Tensorflow}
+\end{figure}
+
+This algorithm was run on a series of test images as well, screenshots of which are shown in \textit{Figure 4}.
+
+\begin{figure}
+\includegraphics[width=\linewidth]{Tracking_images.jpg}
+\caption{Object Tracking in a sequence of images initiated by Tensorflow}
+\end{figure}
+
+\textbf{Advantages:}
+
+•	It’s substantially faster than TensorFlow approach and marginally faster than Hybrid approach.
+•	It keeps track of the object detected in one frame till the end of the video.
+
+\textbf{Disadvantages}
+
+•	Rely on TensorFlow to detect an object before it can track that object throughout the video.
+•	Decrease in size of the box enclosing the feature points of the detected object as the time passes or in other not enclosing all the feature points of the detected object after a few frames.
+ 
+\subsection{Hybrid Approach}  
+
+This approach keeps the best elements from the previous algorithms. It’s almost as fast as second approach and can be trusted with detecting new objects in the middle of the video (a trait shown by first algorithm). However, the only limitation it has is its over reliance on Tensorflow which leads to not detecting objects once Tensorflow is unable to detect the object. It’s an upgrade on tracking algorithm as it detects algorithm even in the intermediate frames of the video but loses its edge if TensorFlow fails to detect it in the frame where this algorithm uses TensorFlow for detection. \textit{See Figure 5}.
+
+    %% Inluding the images
+\begin{figure}
+\includegraphics[width=\linewidth]{Hybrid.jpg}
+\caption{Hybrid approach on a video}
+\end{figure}
+
+This algorithm was run on a series of test images as well, screenshots of which are shown in \textit{Figure 6}.
+
+    %% Inluding the images
+\begin{figure}
+\includegraphics[width=\linewidth]{Hybrid_images.jpg}
+\caption{Hybrid approach on a sequence of images}
+\end{figure}
+
+\textbf{Advantages:}
+
+•	Faster than TensorFlow/Object Detection approach.
+•	More efficient than Tracking and Detection approach.
+
+\textbf{Disadvantages:}
+
+•	Rely on TensorFlow to detect an object before it can track that object for next n frames.
+
+\subsection{Comparison of different methods}
+
+\textbf{What does this Graph in Figure 7 represent?}
+
+The graph shown in \textit{Figure 7} represents the data we gathered after implementing these three algorithms on 3 different videos of same length, i.e. 3 seconds each.  
 X-axis: Name of the video.
 Y- axis: Time in seconds.
 
-  %% Inluding the images
+
+    %% Inluding the images
 \begin{figure}
-\includegraphics[width=\linewidth]{./Picture2.png}
-\caption{Objects detected in test videos}
+\includegraphics[width=\linewidth]{Graph.png}
+\caption{Graph of Time Vs Technique}
 \end{figure}
-
-As you can see clearly for every video, regardless of it resolution, first approach (detection algorithm) has taken longer to track the object and evidently more than twice the time taken by the tracking algorithm
-
-
-
-Although the Open CV tracker seems like a better option in terms of speed, it has a couple of limitations as well. First limitation being tracker algorithm depending on Tensorflow to detect the object and only then tracking it throughout the video. Second limitation being the decrease in size of the box enclosing the feature points of the detected object as the time passes.
-
+  
+ 
 %-------------------------------------------------------------------------
 
 \section{Conclusion and Future Work}
 We will be resolving the shortcomings of our work in the future. To begin with, we will be reducing the dependency on Tensorflow for object detection by look at other alternatives. The primary reason for this is to have zero chance of error while detecting objects. Tensorflow though faster and effective most of the time, it fails to detect objects at certain frame which when coinciding with the object detection frame, can prove to be a failure in the tracking process.
 
-As mentioned earlier, hybrid approach, though proving to be better comparitvely, it does not meet the excpectation that we expected. This is because the sweet spot for reinitializing object detection varies for different videos and we will work on designing an algorithm to detected the ideal frame to initiate object detection in the hybrid approach
+As mentioned earlier, hybrid approach, though proving to be better comparitvely, it does not meet the excpectation that we expected. This is because the sweet spot for reinitializing object detection varies for different videos. Thus, this approach has too much dependency on Tensorflow. We will work on designing an algorithm to detected the ideal frame to initiate object detection in the hybrid approach. Also, a different objection detection technique as suggested above might make the hybrid approach robust.
 
 Also, we would like to explore the possibility of running SIFT detector only inside the bounding box of the detected region of the object and see if it produces a postive impact on the speed on our model.
 
 
 
 %-------------------------------------------------------------------------
-\section{References}
+\begin{thebibliography}{9}
+\bibitem{research1} 
+https://research.googleblog.com/2017/06/
+supercharge-your-computer-vision-models.html
+ 
+\bibitem{HW} 
+http://16720.courses.cs.cmu.edu/hw/hw3.pdf
+ 
+\bibitem{research} 
+https://towardsdatascience.com/building-a-real-time-object
+-recognition-app-with-tensorflow-and-opencv-b7a2b4ebdc32
 
-List and number all bibliographical references in 9-point Times,
-single-spaced, at the end of your paper. When referenced in the text,
-enclose the citation number in square brackets, for
-example~\cite{Authors14}.  Where appropriate, include the name(s) of
-editors of referenced books.
+\bibitem{literaturereview}
+Rupali S.Rakibe, Bharati D.Patil.
+\textit{Background Subtraction Algorithm Based Human Motion Detection}. 
+International Journal of Scientific and Research Publications, May 2013
+
+\bibitem{Videolink} 
+https://drive.google.com/drive/folders/1DNHOEnZ2hg9FvYhQ7i9tk-PC6b3fAjAF
+
+\end{thebibliography}
 
 
 %-------------------------------------------------------------------------
