@@ -12,7 +12,7 @@
 % If you comment hyperref and then uncomment it, you should delete
 % egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
 % run, let it finish, and you should be clear).
-\usepackage[breaklinks=true,bookmarks=false]{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 \cvprfinalcopy % *** Uncomment this line for the final submission
 
@@ -60,21 +60,21 @@ An optimal approach to any tracking algorithm is based on two key areas in compu
 %-------------------------------------------------------------------------
 
 \subsection{Frame Differencing}
-Frame differencing suggests calculating the difference between two successive frame in an image to find the moving objects. While the idea is simple and east to implement, it is generally considered ineffective in dynamic environments where the changes in the frame of an image are not just isolated to the objects that needs to be tracked.
+Frame differencing suggests calculating the difference between two successive frame in an image to find the moving objects. While the idea is simple and easy to implement, it is generally considered ineffective in dynamic environments where the changes in the frame of an image are not just isolated to the objects that need to be tracked.
 
 \subsection{Background Subtraction}
-This techniques involves modelling the background and use that for background subtraction. We must choose a background model sensitive enough to uncover the objects in an image/frame and use that as a reference in tracking. This can be done by find the variation between frames and the reference models. Common filters like mean and median filters can be used to calculate the difference in pixel intensities. This is mainly achieved using recursive and non-recursive algorithms. A background subtraction algorithm based on frame differencing is explored in ~\cite{literaturereview}.  Similar to the previous approach, this method becomes in effective in the variation in the background becomes high. A more sophisticated method which can ignore highly changing  background will be needed for detecting objects will be required for advanced models.
+This techniques involves modelling the background and using that for background subtraction. We must choose a background model sensitive enough to uncover the objects in an image/frame and use that as a reference in tracking. This can be done by finding the variation between frames and the reference models. Common filters like mean and median filters can be used to calculate the difference in pixel intensities. This is mainly achieved using recursive and non-recursive algorithms. A background subtraction algorithm based on frame differencing is explored in ~\cite{literaturereview}.  Similar to the previous approach, this method becomes ineffective if the variation in the background becomes high. A more sophisticated method which can ignore highly changing  background will be needed for robustness.
 
 \subsection{Support Vector Machine (SVM)}
-SVMs apply machine learning algorithms for learning, analyzing and storing the the output as positive and negative values that represent the tracked objects in an image and objects not tracked in an image. SVMs have a wider range of application in real world, that includes but not isolated to face detection, bioinformatics, handwriting or pattern recognitions etc.
+SVMs apply machine learning algorithms for learning, analyzing and storing the output as positive and negative values that represent the tracked objects in an image and objects not tracked in an image. SVMs have a wider range of application in real world, that includes but not isolated to face detection, bioinformatics, handwriting or pattern recognitions etc.
 
 \subsection{Silhouette Based Tracking approach}
-This approach is helpful in tracking complex geometric shapes present in images such as hands, fingers etc. It can be done by employed by track either the boundary(Contour) of objects in an image or the shape corresponding to those objects. Contour based tracking can be achieved using gradient descent minimization technique and using state space models to trace boundaries. Shape Matching is a kind of brute force approach applied on a region of interest in a frame to identify objects that can be matched with a reference object
+This approach is helpful in tracking complex geometric shapes present in images such as hands, fingers etc. It can be done by tracking either the boundary(Contour) of objects in an image or the shape corresponding to those objects. Contour based tracking can be achieved using gradient descent minimization technique and using state space models to trace boundaries. Shape Matching is a kind of brute force approach applied on a region of interest in a frame to identify objects that can be matched with a reference object
 
 
 \subsection{Tensorflow API}
 
-Tensorflow was originally developed by Google Brain Team to help facilitate machine learning and deep learning researches. Tensorflow's object detection model consists of a neural network trained from COCO(Common Objects in Context) dataset. It contains around 300k images of 90 commonly used objects. The library consists of 5 different models that can be used; classified based on their speed and accuracy of placing the bounding box (a box that encloses a detected object). We plan to use the latest version of one of the models - \textit{ssd\textunderscore mobilenet\textunderscore v1\textunderscore coco}, which has the highest speed while sacrificing a little efficiency in placing the bounding box on the object.
+Tensorflow was originally developed by Google Brain Team to help facilitate machine learning and deep learning researches. Tensorflow's object detection model consists of a neural network trained from COCO(Common Objects in Context) dataset ~\cite{coco}. It contains around 300k images of 90 commonly used objects. The library consists of 5 different models that can be used; classified based on their speed and accuracy of placing the bounding box (a box that encloses a detected object). We plan to use the latest version of one of the models - \textit{ssd\textunderscore mobilenet\textunderscore v1\textunderscore coco}, which has the highest speed while sacrificing a little efficiency in placing the bounding box on the object.
 
 \subsection{Lucas-Kanade Tracker in OpenCV}
 
@@ -86,7 +86,7 @@ Developed by Bruce D. Lucas and Takeo Kanade, Lucas-Kanade Tracker uses an optic
 
 %-------------------------------------------------------------------------
 \section{Method Proposed}
-Neural Networks have been proven to produce better and efficient detection models. 
+
 
 Our idea was to come up with an ideal tracking pipeline that is able to self detect objects and track them. Given the scope of the problem we decided to make use of TensorFlow's object detection library which provided us with a desired pre-trained model and OpenCV's implementation of Lucas Kanade Tracker.  
 
@@ -242,8 +242,7 @@ supercharge-your-computer-vision-models.html}
 \url{http://16720.courses.cs.cmu.edu/hw/hw3.pdf}
  
 \bibitem{research} 
-\url{https://towardsdatascience.com/building-a-real-time-object
--recognition-app-with-tensorflow-and-opencv-b7a2b4ebdc32}
+\url{https://goo.gl/kWzd3i}
 
 \bibitem{literaturereview}
 Rupali S.Rakibe, Bharati D.Patil.
@@ -252,7 +251,8 @@ International Journal of Scientific and Research Publications, May 2013
 
 \bibitem{Videolink} 
 \url{https://goo.gl/F5MFyF}
-
+\bibitem{coco}
+\url{http://cocodataset.org/#home}
 \end{thebibliography}
 
 

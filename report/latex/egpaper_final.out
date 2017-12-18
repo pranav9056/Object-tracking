@@ -1,0 +1,17 @@
+\BOOKMARK [1][-]{section.1}{. Literature Review}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{. Frame Differencing}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{. Background Subtraction}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{. Support Vector Machine \(SVM\)}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.4}{. Silhouette Based Tracking approach}{section.1}% 5
+\BOOKMARK [2][-]{subsection.1.5}{. Tensorflow API}{section.1}% 6
+\BOOKMARK [2][-]{subsection.1.6}{. Lucas-Kanade Tracker in OpenCV}{section.1}% 7
+\BOOKMARK [1][-]{section.2}{. Method Proposed}{}% 8
+\BOOKMARK [2][-]{subsection.2.1}{. Objection detection using Tensorflow}{section.2}% 9
+\BOOKMARK [2][-]{subsection.2.2}{. Object tracking initialized by Tensorflow}{section.2}% 10
+\BOOKMARK [2][-]{subsection.2.3}{. Hybrid Approach}{section.2}% 11
+\BOOKMARK [1][-]{section.3}{. Experimental Analysis and Result}{}% 12
+\BOOKMARK [2][-]{subsection.3.1}{. Object detection using tensorflow}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.2}{. Object tracking initiated by Tensorflow}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.3}{. Hybrid Approach}{section.3}% 15
+\BOOKMARK [2][-]{subsection.3.4}{. Comparison of different methods}{section.3}% 16
+\BOOKMARK [1][-]{section.4}{. Conclusion and Future Work}{}% 17

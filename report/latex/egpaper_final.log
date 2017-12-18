@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.27)  18 DEC 2017 04:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.9.27)  18 DEC 2017 13:00
 entering extended mode
 **./egpaper_final.tex
 (egpaper_final.tex
@@ -222,15 +222,13 @@ File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 4362.
-Package hyperref Info: Option `bookmarks' set `false' on input line 4362.
 Package hyperref Info: Hyper figures OFF on input line 4486.
 Package hyperref Info: Link nesting OFF on input line 4491.
 Package hyperref Info: Hyper index ON on input line 4494.
 Package hyperref Info: Plain pages OFF on input line 4501.
 Package hyperref Info: Backreferencing OFF on input line 4506.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks OFF on input line 4741.
+Package hyperref Info: Bookmarks ON on input line 4735.
 \c@Hy@tempcnt=\count108
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
@@ -341,6 +339,11 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 22.
 LaTeX Info: Redefining \pageref on input line 22.
 LaTeX Info: Redefining \nameref on input line 22.
+
+(egpaper_final.out) (egpaper_final.out)
+\@outlinefile=\write3
+\openout3 = `egpaper_final.out'.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 LaTeX Font Info:    Try loading font information for U+msa on input line 50.
@@ -359,13 +362,65 @@ LaTeX Font Info:    Try loading font information for OT1+pcr on input line 53.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1pcr.fd"
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 56.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 62.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 65.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 68.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 71.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 75.
+
+[1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
 ]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 79.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 88.
+
+
 Underfull \hbox (badness 2359) in paragraph at lines 93--94
 []\OT1/ptm/m/n/10 We ex-per-i-ment with three dif-fer-ent tech-niques for
  []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 95.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 98.
 
 
 Underfull \hbox (badness 1226) in paragraph at lines 106--107
@@ -383,15 +438,30 @@ Underfull \hbox (badness 1286) in paragraph at lines 106--107
 \OT1/ptm/m/n/10 openCV, which pro-vides an im-ple-men-ta-tion of Lucas-
  []
 
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 112.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 115.
-[2] <Detection.jpg, id=37, 4010.985pt x 1237.62375pt>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 118.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 122.
+
+[2] <Detection.jpg, id=94, 4010.985pt x 1237.62375pt>
 File: Detection.jpg Graphic file (type jpg)
  <use Detection.jpg>
 Package pdftex.def Info: Detection.jpg used on input line 129.
 (pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
 
-<Detection_images.jpg, id=38, 4010.985pt x 1237.62375pt>
+<Detection_images.jpg, id=95, 4010.985pt x 1237.62375pt>
 File: Detection_images.jpg Graphic file (type jpg)
 
 <use Detection_images.jpg>
@@ -400,13 +470,19 @@ Package pdftex.def Info: Detection_images.jpg used on input line 135.
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- <Tracking.jpg, id=39, 4010.985pt x 1237.62375pt>
-File: Tracking.jpg Graphic file (type jpg)
 
-<use Tracking.jpg>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 149.
+
+<Tracking.jpg, id=96, 4010.985pt x 1237.62375pt>
+File: Tracking.jpg Graphic file (type jpg)
+ <use Tracking.jpg>
 Package pdftex.def Info: Tracking.jpg used on input line 155.
 (pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
- <Tracking_images.jpg, id=40, 4010.985pt x 1237.62375pt>
+
+<Tracking_images.jpg, id=97, 4010.985pt x 1237.62375pt>
 File: Tracking_images.jpg Graphic file (type jpg)
 
 <use Tracking_images.jpg>
@@ -424,19 +500,24 @@ Missing character: There is no ¢ in font ptmr7t!
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ¢ in font ptmr7t!
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 176.
+
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ™ in font ptmr7t!
- <Hybrid.jpg, id=41, 4010.985pt x 1237.62375pt>
+<Hybrid.jpg, id=98, 4010.985pt x 1237.62375pt>
 File: Hybrid.jpg Graphic file (type jpg)
-
-<use Hybrid.jpg>
+ <use Hybrid.jpg>
 Package pdftex.def Info: Hybrid.jpg used on input line 182.
 (pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
- <Hybrid_images.jpg, id=42, 4010.985pt x 1237.62375pt>
-File: Hybrid_images.jpg Graphic file (type jpg)
 
-<use Hybrid_images.jpg>
+<Hybrid_images.jpg, id=99, 4010.985pt x 1237.62375pt>
+File: Hybrid_images.jpg Graphic file (type jpg)
+ <use Hybrid_images.jpg>
 Package pdftex.def Info: Hybrid_images.jpg used on input line 190.
 (pdftex.def)             Requested size: 237.13594pt x 73.1589pt.
 Missing character: There is no â in font ptmr7t!
@@ -450,17 +531,27 @@ Underfull \hbox (badness 1019) in paragraph at lines 196--198
 [] \OT1/ptm/m/n/10 Faster than Ten-sor-Flow/Object De-tec-tion ap-proach.
  []
 
-[3 <./Detection.jpg> <./Detection_images.jpg> <./Tracking.jpg> <./Tracking_imag
-es.jpg> <./Hybrid.jpg>]
 Missing character: There is no â in font ptmr7t!
 Missing character: There is no € in font ptmr7t!
 Missing character: There is no ¢ in font ptmr7t!
- <Graph.png, id=54, 470.7186pt x 380.622pt>
-File: Graph.png Graphic file (type png)
+[3 <./Detection.jpg> <./Detection_images.jpg> <./Tracking.jpg> <./Tracking_imag
+es.jpg> <./Hybrid.jpg>]
 
-<use Graph.png>
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 203.
+
+<Graph.png, id=109, 470.7186pt x 380.622pt>
+File: Graph.png Graphic file (type png)
+ <use Graph.png>
 Package pdftex.def Info: Graph.png used on input line 211.
 (pdftex.def)             Requested size: 237.13594pt x 191.75085pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -10.0pt
+(hyperref)                removed on input line 218.
+
 
 Underfull \hbox (badness 10000) in paragraph at lines 239--240
 [][]$\OT1/pcr/m/n/10 https : / / research .
@@ -481,41 +572,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 242--243
 [][]$\OT1/pcr/m/n/10 http : / / 16720 . courses . cs . cmu . edu / hw /
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
-[][]$\OT1/pcr/m/n/10 https : / / towardsdatascience . com /
- []
-
-
-Overfull \hbox (283.02397pt too wide) in paragraph at lines 246--247
-\OT1/pcr/m/n/10 building-[]a-[]real-[]time-[]object-[]recognition-[]app-[]with-
-[]tensorflow-[]and-[]opencv-[]b7a2b4ebdc32$[] 
- []
-
 No file egpaper_final.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 272.
 [4 <./Hybrid_images.jpg> <./Graph.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 272.
  (egpaper_final.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 272.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 272.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 272.
+Package rerunfilecheck Info: File `egpaper_final.out' has not changed.
+(rerunfilecheck)             Checksum: 04DF697299EEBBEC1B644E1FD2F687AB;1284.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 272.
  ) 
 Here is how much of TeX's memory you used:
- 6354 strings out of 493334
- 90709 string characters out of 3139249
- 182377 words of memory out of 3000000
- 9750 multiletter control sequences out of 15000+200000
+ 6381 strings out of 493334
+ 91072 string characters out of 3139249
+ 182620 words of memory out of 3000000
+ 9771 multiletter control sequences out of 15000+200000
  29898 words of font info for 68 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,8n,26p,889b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 34i,8n,30p,849b,324s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
 s/MiKTeX 2.9/fonts/type1/urw/courier/ucrr8a.pfb><C:/Program Files/MiKTeX 2.9/fo
 nts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/tim
 es/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on egpaper_final.pdf (4 pages, 17527772 bytes).
+Output written on egpaper_final.pdf (4 pages, 17532811 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
- 36 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 157 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 172 words of extra memory for PDF output out of 10000 (max. 10000000)
 
